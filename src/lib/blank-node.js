@@ -4,14 +4,18 @@
  * @private
  * @return {void}
  */
-export default function blankNode() {
+
+let i = 1
+export default function blankNode(isFolder) {
+    i++
     return {
-        text: 'New Node',
+        text: 'untitled' + i,
         itree: {
             state: {
                 editing: true,
                 focused: true
             }
-        }
+        },
+        isFolder: !!isFolder
     };
 }

@@ -353,10 +353,10 @@ export default class ListItem extends Component {
         }
         else if (this.props.dom.isDynamic && node.children) {
             if (!node.hasLoadedChildren()) {
-                return <EmptyList text='Loading...' />;
+                return <EmptyList isFolder={node.isFolder} text='Loading...' />;
             }
             else {
-                return <EmptyList text='No Results' />;
+                return <EmptyList isFolder={node.isFolder} text='No Results' />;
             }
         }
     }

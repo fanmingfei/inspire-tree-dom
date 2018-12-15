@@ -3,16 +3,19 @@ import blankNode from '../lib/blank-node';
 import List from './list';
 
 export default class Tree extends Component {
-    add() {
+    add(isFolder) {
         this.props.dom._tree.focused().blur();
 
-        this.props.dom._tree.addNode(blankNode());
+        this.props.dom._tree.addNode(blankNode(isFolder));
     }
 
     renderAddLink() {
+        const list = []
         if (this.props.dom._tree.config.editing.add) {
-            return <li><a className='btn icon icon-plus' onClick={this.add.bind(this)} title='Add a new root node'></a></li>;
+            list.push(<li><a className='btn icon icon-folder' onClick={this.add.bind(this, true)} title='Add a new folder'></a><a className='btn icon icon-plus' onClick={this.add.bind(this, false)} title='Add a new file'></a></li>)
+
         }
+        return list
     }
 
     render() {

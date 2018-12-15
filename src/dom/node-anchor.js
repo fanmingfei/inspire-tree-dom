@@ -100,7 +100,8 @@ export default class NodeAnchor extends Component {
 
         if (!this.props.dom.config.showCheckboxes) {
             let folder = this.props.expanded ? 'icon-folder-open' : 'icon-folder';
-            classNames.push(node.itree.icon || (this.props.hasOrWillHaveChildren ? folder : 'icon-file-empty'));
+            folder = node.isFolder ? folder : 'icon-file-empty'
+            classNames.push(node.itree.icon || folder);
         }
 
         attributes.class = attributes.className = classNames.join(' ');

@@ -67,6 +67,6 @@ export default class List extends Component {
             }
         }
 
-        return <ol>{ items }{ this.props.children }</ol>;
+        return <ol>{ this.props.children }{ items }</ol>;
     }
 }
