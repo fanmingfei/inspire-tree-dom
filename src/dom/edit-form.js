@@ -39,6 +39,7 @@ export default class EditForm extends Component {
     }
 
     keypress(event) {
+        console.log(event,123)
         if (event.which === ENTER) {
             return this.save();
         }

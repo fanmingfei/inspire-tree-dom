@@ -114,7 +114,7 @@ export default class InspireDOM {
         this.$target.setAttribute('tabindex', this.config.tabindex || 0);
 
         // Handle keyboard interaction
-        this.$target.addEventListener('keydown', this.keyboardListener.bind(this));
+        // this.$target.addEventListener('keydown', this.keyboardListener.bind(this));
 
         // Drag and drop listeners
         if (this.config.dragAndDrop.enabled) {
